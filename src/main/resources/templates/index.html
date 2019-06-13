@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:message="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--/*@thymesVar id="map" type="java.util.Map"*/-->
+<!--/*@thymesVar id="message" type="java.util.HashMap"*/-->
+<!--<p th:text="${map.message}">message</p>-->
+<!--&lt;!&ndash;/*@thymesVar id="date" type="java.util.Date"*/&ndash;&gt;-->
+<!--<p th:text="${map.date}">message</p>-->
+<div th:object="${map}">
+    <!--<p message:  <span th:text=""></span>.</p>-->
+    <p>message:<span th:text="*{message}"></span></p>
+    <p>date: <span th:text="*{date}"></span></p>
+</div>
+<div >
+    <p>message2: <span th:text="${map.message}"></span> </p>
+    <p>date2:<span th:text="${map.date}"></span> </p>
+    <a href="hello.html" th:href="@{https://localhost:8080/hello}">view</a>
+</div>
+<!--<div th:object="${session.user}">-->
+<!--<p>Name: <span th:text="*{firstName}">Sebastian</span>.</p>-->
+<!--<p>Surname: <span th:text="*{lastName}">Pepper</span>.</p>-->
+<!--<p>Nationality: <span th:text={nationality}">Saturn</span>.</p>-->
+<!--</div>-->
+
+</body>
+</html>
